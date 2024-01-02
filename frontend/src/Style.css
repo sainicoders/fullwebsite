@@ -1,0 +1,84 @@
+/* Common styles for both sign-in and sign-up */
+.nav {
+   gap: 2vw;
+   margin-left: 30vw;
+ }
+ 
+ /* Sign-in CSS */
+ #sign {
+   background: linear-gradient(to right, rgb(148, 7, 113), rgb(225, 115, 95));
+   color: aliceblue;
+   height: 15vh;
+   width: 100%;
+ }
+ 
+ #fill {
+   margin-top: 6vh;
+ }
+ 
+ #btn {
+   width: 30vw;
+   background-color: rgb(85, 6, 155);
+   height: 6vh;
+   border-radius: 5px;
+ }
+ 
+ #account {
+   color: blue;
+ }
+ 
+ /* Sign-up CSS */
+ #signup {
+   background: linear-gradient(to right, rgb(136, 11, 194), rgb(161, 4, 88));
+   color: aliceblue;
+   height: 15vh;
+   width: 100%;
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+   .nav {
+     margin-left: 5vw;
+   }
+ 
+   #fill {
+     margin-top: 3vh;
+   }
+ 
+   #btn {
+     width: 70vw;
+   }
+ }
+
+  /* Dashboard-up CSS */
+  #dash {
+    background: linear-gradient(to right, rgb(106, 214, 214), rgb(3, 78, 108));
+    color: aliceblue;
+    height: 15vh;
+    width: 100%;
+}
+
+#boxAd {
+    height: 8vh;
+    background-color: white;
+    color: blue;
+    border: 0.1px solid rgba(239, 232, 232, 0.826);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #dash {
+        height: 10vh; /* Adjust the height for smaller screens */
+    }
+
+    #boxAd {
+        height: 6vh; /* Adjust the height for smaller screens */
+    }
+}
+
+/* css in shop */
+span{
+  padding: 15px;
+  margin-top: 30px;
+}
+ 
