@@ -11,6 +11,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -78,11 +80,29 @@ const Shop=()=>{
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Mobile
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          Mobile refers to portable devices, like smartphones and tablets, <br/><br/>
+          <div id="pri">
+            Price: Rs. 20000
+          </div><br/>
+          <div id="pri">
+            Category: Mobile
+          </div><br/>
+          <div id="pri">
+            Added on 5 minutes ago
+          </div><br/>
+          <Button size="small" style={{backgroundColor:"blue",color:"white",borderRadius:"50px",margin:"5px"}}>in stock</Button> &nbsp; &nbsp;
+          <Stack direction="row" spacing={2} >
+      
+      <Button variant="contained" color="success" >
+        view product
+      </Button>
+      <Button variant="outlined" color="error">
+        add to card
+      </Button>
+    </Stack>
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -100,13 +120,32 @@ const Shop=()=>{
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Mobile
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          Mobile refers to portable devices, like smartphones and tablets, <br/><br/>
+          <div id="pri">
+            Price: Rs. 40000
+          </div><br/>
+          <div id="pri">
+            Category: Laptop
+          </div><br/>
+          <div id="pri">
+            Added on 10 minutes ago
+          </div><br/>
+          <Button size="small" style={{backgroundColor:"blue",color:"white",borderRadius:"50px", margin:"5px"}}>in stock</Button> &nbsp; &nbsp;
+          <Stack direction="row" spacing={2} >
+      
+      <Button variant="contained" color="success" >
+        view product
+      </Button>
+      <Button variant="outlined" color="error">
+        add to card
+      </Button>
+    </Stack>
           </Typography>
         </CardContent>
+        
       </CardActionArea>
     </Card>
     </div>
@@ -120,13 +159,31 @@ const Shop=()=>{
           image="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="green iguana"
         />
-        <CardContent>
+       <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Mobile
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          Mobile refers to portable devices, like smartphones and tablets, <br/><br/>
+          <div id="pri">
+            Price: Rs. 8000
+          </div><br/>
+          <div id="pri">
+            Category: Watch
+          </div><br/>
+          <div id="pri">
+            Added on 8 minutes ago
+          </div><br/>
+          <Button size="small" style={{backgroundColor:"blue",color:"white",borderRadius:"50px",margin:"5px"}}>in stock</Button> &nbsp; &nbsp;
+          <Stack direction="row" spacing={2} >
+      
+      <Button variant="contained" color="success" >
+        view product
+      </Button>
+      <Button variant="outlined" color="error">
+        add to card
+      </Button>
+    </Stack>
           </Typography>
         </CardContent>
       </CardActionArea>

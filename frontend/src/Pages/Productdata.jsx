@@ -1,59 +1,84 @@
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import { Button } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import axios from 'axios';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import { useEffect } from 'react';
+import { useState } from 'react';
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+function Productdata(){
 
-import React, { useState, useEffect } from 'react';
+  const [data,setdata]=useState([]);
+  useEffect(()=>{
+    const fetchData=async()=>{
+      try{
+        const response=await axios.get('http://localhost:3001/product/data');
+        setdata(response.data.products);
+      }
+      catch(error){
+        console.error(error)
+      }
+    }
+    fetchData();
+  },[])
+  return(
+    <Grid container spacing={3} >
+  <Grid item xs>
+    <Item style={{display:"flex",float:"left"}}>
+      {data.map(products =>(
+             <Card sx={{ maxWidth: 300 }}>
+             <CardActionArea>
+              
+              <CardContent>
+                 <Typography gutterBottom variant="h5" component="div">
+                   Name :{products.name}
+                 </Typography>
+                 <Typography variant="body2" color="text.secondary">
+                
+                 
+                 <br/><br/>
+                 <div id="pri">
+                   Price: Rs. {products.price}
+                 </div><br/>
+                 <div id="pri">
+                   Category: {products.category}
+                 </div><br/>
+                 <div id="pri">
+                  Description:{products.description}
+                 </div><br/>
+                 <Button size="small" style={{backgroundColor:"blue",color:"white",borderRadius:"50px",margin:"5px"}}>in stock</Button> &nbsp; &nbsp;
+                 <Stack direction="row" spacing={2} >
+             
+             <Button variant="contained" color="success" >
+               view product
+             </Button>
+             <Button variant="outlined" color="error">
+               add to card
+             </Button>
+           </Stack>
+                 </Typography>
+               </CardContent>
+             </CardActionArea>
+           </Card>
+      ))};
 
-function Productdata() {
-    
-
+    </Item>
+  </Grid>
  
-  const [rows, setRows] = useState([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3001/product/data')
-      .then((response) => response.json())
-      .then((data) => {
-
-        // Check if data is an array or if it's an object with an array property
-        const productArray = Array.isArray(data) ? data : data.products || [];
-        setRows(productArray.map((product)=>({...product,id:product._id})));  
-        // setRows(employeeArray.map((employee) => createData(employee.firstname, employee.email, employee.dob, employee.password)));
-      })
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
-
-
-  return (  <div>  
-          <div>
-             <table style={{width:'100%',borderCollapse:'collapse',border:'1px solid #ddd'}}>
- <thead>
-   <tr>
-     <th style={{border:'1px solid #ddd'}}>
-       Employee Name
-     </th>
-     <th style={{border:'1px solid #ddd'}}>
- Email 
- </th>
-   </tr>
- </thead>
- <tbody>
-   {rows.map((row,index)=>(
-     <tr key={index} style={{border:'1px solid #ddd'}}>
-       <td style={{border:'1px solid #ddd'}}>
-         {row.name}
-       </td>
-       <td style={{border:'1px solid #ddd'}}>
-         {row?.price}
-       </td>
-     </tr>
-   ))}
- </tbody>
-
-
-
-
-      </table>
-    </div>
-    </div>
+</Grid>
   )
 }
-
-export default Productdata
+export default Productdata;

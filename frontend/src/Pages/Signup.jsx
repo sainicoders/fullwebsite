@@ -15,7 +15,8 @@ const Signup=()=>{
     name: '',
     email: '',
     password: '',
-    Key:''
+    Key:'',
+    gender:''
   });
 const Navigate=useNavigate();
   const register = (e) => {
@@ -119,6 +120,14 @@ const Navigate=useNavigate();
                 />
               </div>
               <br />
+              <div>
+              <label for="gender">Choose a gender:</label>
+ <select id="gender" name="gender"   value={Data.genger} onChange={register}>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+ </select><br/><br/>
+              </div>
               <button type="submit" id="btn" className="btn btn-primary">
                 Submit
               </button>

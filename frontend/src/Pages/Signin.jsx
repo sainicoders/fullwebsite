@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useNavigate} from "react-router-dom";
+import { Link, json, useNavigate} from "react-router-dom";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Row from 'react-bootstrap/Row';
@@ -26,9 +26,11 @@ const Signin=()=> {
       
      const response = await axios.post('http://localhost:3001/login',data);
      if(response && response.data && response.data.token){
-      // console.log(response.data);
+      console.log(response.data);
       /// store the token in localstoarge 
       localStorage.setItem('token',response.data.token);
+      //data in localstorage
+      localStorage.setItem('data',JSON.stringify(response.data.user));
       console.log("localstorage",localStorage)
       Swal.fire({
         icon:'success',

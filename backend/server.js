@@ -30,7 +30,8 @@ const User= mongoose.model('User',{
     name:String,
     email:String,
     password:String,
-    Key:String
+    Key:String,
+    gender:String
 });
 
 //create model of product
@@ -86,9 +87,9 @@ const authenticateToken= (req,res,next)=>{
 
 app.post('/Signup', async(req,res)=>
 {
-const{name,email,password,Key}=req.body;
+const{name,email,password,Key,gender}=req.body;
 try{
-const users=new User ({name,email,password,Key});
+const users=new User ({name,email,password,Key,gender});
 await users.save();
 res.json({ Key:users.key,message:"Signup successFull "});
 }
@@ -113,7 +114,7 @@ return res.status(401).json({Messge:"Invalid credential "})
 // Gentare JWT Token 
 
      const token=jwt.sign({userId:User._id,email:User.email},'your sectre_key',{expiresIn:'1h'});
-     return res.status(201).json({Message:"Login Succesfull",token});
+     return res.status(201).json({Message:"Login Succesfull",token,user});
 
     }
 }

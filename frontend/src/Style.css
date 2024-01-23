@@ -1,7 +1,8 @@
 /* Common styles for both sign-in and sign-up */
 .nav {
    gap: 2vw;
-   margin-left: 30vw;
+   margin-left: 40vw;
+  
  }
  
  /* Sign-in CSS */
@@ -80,5 +81,10 @@
 span{
   padding: 15px;
   margin-top: 30px;
+}
+
+#pri{
+  height: 3vh;
+  background-color: rgb(233, 229, 229);
 }
  
