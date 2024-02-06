@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 
 import './Style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +12,8 @@ import Shop from './Pages/Shop';
 import Dashboard from './Pages/Dashboard';
 import Product from './Pages/Product';
 import Productdata from './Pages/Productdata';
+import Payment from './Pages/Payment';
+
 
 function App() {
   
@@ -30,6 +32,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Product" element={<Product/>}/>
           <Route path="/Productdata" element={<Productdata/>}/>
+          <Route path='/payment' element={<Payment/>}/>
          
         </Routes>
       </Router>
