@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 const express=require('express');
 const jwt=require('jsonwebtoken');
-const port=3001;
+const port=3002;
 const cors=require('cors');
 const app=express();
 
